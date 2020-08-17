@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h3 align=center>{{totalmembers}} Members <br>Total Savings {{totalsavings}}/= Tk.</h3><br><br>
+<table>
+<tr>
+<th colspan="3" class="center-funding">Fund Collection Table</th>
+</tr>
+<tr>
+<th>Name</th>
+<th>Date</th>
+<th>Amount</th>
+</tr>
+{% for jomadetails  in jomadetails %}
+<tr>
+<td><a href="{% url 'memberdetails' jomadetails.member_id %}">{{jomadetails.member}}</a></td>
+<td>{{jomadetails.kisti|date:"d F, Y l"}}</td>
+<td>{{jomadetails.amount}}/=</td>
+</tr>
+{% endfor %}
+<tr>
+<th></th>
+<th></th>
+<th>Total: {{totalsavings}}/=</th>
+</tr>
+</table>
+
+
+
+{% comment %} <p>Total members : {{totalmembers}}</p>
+{% for membersname in membersname %}
+<p>{{membersname.name}}</p>
+{% endfor %} {% endcomment %}
+{% comment %} <table>
+<tr>
+{% for jomadetails in jomadetails %}
+<td>{{jomadetails.kisti|date:"dS F, Y l"}}</td>
+{% endfor %}
+</tr>
+<tr>
+{% for jomadetails in jomadetails %}
+<td>{{jomadetails.member}}</td>
+{% endfor %}
+</tr>
+</table> {% endcomment %}
+{% endblock content %}
