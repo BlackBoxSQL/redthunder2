@@ -1,11 +1,11 @@
 autopep8==1.5.4
-decouple==0.0.7
 dj-database-url==0.5.0
 Django==2.2
 django-heroku==0.3.1
 gunicorn==20.0.4
 psycopg2==2.8.5
 pycodestyle==2.6.0
+python-decouple==3.3
 pytz==2020.1
 sqlparse==0.3.1
 toml==0.10.1
